@@ -112,5 +112,62 @@ function appMenu() {
                 }
             });
     }
-    
+    function addEngineer() {
+        inquirer
+            .prompt([
+                {
+                    type: 'input',
+                    name: "engineerName",
+                    message: "What is the name of your engineer?",
+                    validate: (answer) => {
+                        if (answer !== '') {
+                            return true;
+                        } else {
+                            return "Enter at least one character";
+                        };
+                    },
+                },
+                {
+                    type: 'input',
+                    name: "engineerId",
+                    message: "What is the enginee's id number?",
+                    validate: (answer) => {
+                        const qualify = answer.match(/^[1-9]\d*$/);
+                        if (qualify) {
+                            if (idArray.includes(answer)) {
+                                return "This ID is already in use";
+                            } else {
+                                return true;
+                            }
+                        }
+                        return "Please enter a number greater than zero";
+                    },
+                },
+                {
+                    type: 'input',
+                    name: 'engineerEmail',
+                    message: "What is the engineer's email address?",
+                    validate: (answer) => {
+                        const qualify = answer.match(/\S+@\S+\.\S+/);
+                        if (qualify) {
+                            return true;
+                        } else {
+                           return 'Enter a valid email address';
+                        };
+                    },
+                },
+                {
+                    type: 'input',
+                    name: 'engineerGitHub',
+                    message: "What is the engineer's GitHub username?",
+                    validate: (answer) => {
+                        if (answer !== '') {
+                            return true;
+                        } else {
+                            return "Enter at least one character";
+                        };
+                    },
+                },
+            ])
+    }
 }
