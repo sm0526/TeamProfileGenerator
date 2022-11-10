@@ -11,3 +11,8 @@ test("Using a function to retrieve the school name", () => {
     const x = new Intern("Snow", 1, "test@email.com", testSchool);
     expect(x.retrieveSchool()).toBe(testSchool);
 });
+
+test("Using a function retrieve the employee role \"Intern\"", () => {
+    const testRole = "Intern";
+    const x = new Intern("Snow", 1, "test@email.com", "DU");
+});
