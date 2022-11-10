@@ -178,7 +178,7 @@ function appMenu() {
                 );
                 teamMembers.push(engineer);
                 idArray.push(answers.engineerId);
-                createTeam();
+                constructTeam();
             });
     }
     function addIntern() {
@@ -247,8 +247,14 @@ function appMenu() {
                 );
                 teamMembers.push(intern);
                 idArray.push(answers.internId);
-                createTeam();
+                constructTeam();
             });
     }
-    
+    function buildTeam() {
+        if (!fs.existsSync(DIST_DIR)) {
+            fs.mkdirSync(DIST_DIR);
+        }
+        fs.writeFileSync(distPath, render(teamMembers), 'utf-8');
+    }
+    constructManager
 }
