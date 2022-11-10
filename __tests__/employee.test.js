@@ -13,12 +13,12 @@ test("Using constructor arguments can set a name", () => {
 
 test("Using constructor arguments can set an id", () => {
     const testId = 100;
-    const x = new Employee("White", testId);
+    const x = new Employee("Snow", testId);
     expect(x.id).toBe(testId);
 });
 
 test("Using constructor arguments can set an email", () => {
     const testEmail = "test@email.com";
-    const x = new Employee("White", 1, testEmail);
+    const x = new Employee("Snow", 1, testEmail);
     expect(x.email).toBe(testEmail);
 });
