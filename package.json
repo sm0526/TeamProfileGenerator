@@ -16,6 +16,9 @@
     "url": "https://github.com/sm0526/TeamProfileGenerator/issues"
   },
   "homepage": "https://github.com/sm0526/TeamProfileGenerator#readme",
+  "dependencies": {
+    "inquirer": "8.2.4"
+  },
   "devDependencies": {
     "jest": "^29.2.2"
   }
