@@ -55,7 +55,7 @@ function appMenu() {
                         if (qualify) {
                             return true;
                         } else {
-                           return 'Enter a valid email address';
+                            return 'Enter a valid email address';
                         };
                     },
                 },
@@ -152,7 +152,7 @@ function appMenu() {
                         if (qualify) {
                             return true;
                         } else {
-                           return 'Enter a valid email address';
+                            return 'Enter a valid email address';
                         };
                     },
                 },
@@ -180,5 +180,63 @@ function appMenu() {
                 idArray.push(answers.engineerId);
                 createTeam();
             });
+    }
+    function addIntern() {
+        inquirer
+            .promt([
+                {
+                    type: 'input',
+                    name: 'internName',
+                    message: "What is the name of your intern?",
+                    validate: (answer) => {
+                        if (answer !== '') {
+                            return true;
+                        } else {
+                            return 'Enter at least one character';
+                        };
+                    },
+                },
+                {
+                    type: 'input',
+                    name: 'internId',
+                    message: "What is your intern's id?",
+                    validate: (answer) => {
+                        const qualify = answer.match(/^[1-9]\d*$/);
+                        if (qualify) {
+                            if (idArray.includes(answer)) {
+                                return 'This ID is already in use';
+                            } else {
+                                return true;
+                            }
+                        }
+                        return 'Enter a number greater than zero.';
+                    },
+                },
+                {
+                    type: 'input',
+                    name: 'internEmail',
+                    message: "What is the intern's email address?",
+                    validate: (answer) => {
+                        const qualify = answer.match(/\S+@\S+\.\S+/);
+                        if (qualify) {
+                            return true;
+                        } else {
+                            return "Enter a valid email address";
+                        };
+                    },
+                },
+                {
+                    type: 'input',
+                    name: 'internSchool',
+                    message: "Where is your intern going to school?",
+                    validate: (answer) => {
+                        if (answer !== '') {
+                            return true;
+                        } else {
+                            return "Enter at least one character";
+                        };
+                    },
+                },
+            ])
     }
 }
