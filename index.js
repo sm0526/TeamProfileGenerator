@@ -85,5 +85,20 @@ function appMenu() {
                 constructTeam();
             });
     }
-    
+    function constructTeam() {
+        inquirer
+            .prompt([
+                {
+                    type: 'list',
+                    name: 'memberChoice',
+                    message: "Which type of team member would you like to add to your team?",
+                    choices: [
+                        'Engineer',
+                        'Intern',
+                        'My team is Complete',
+                    ],
+                },
+            ])
+            
+    }
 }
