@@ -39,4 +39,10 @@ test("Using a function can retrieve email", () => {
     const testEmail = "test@email.com";
     const x = new Employee("Snow", 1, testEmail);
     expect(x.retrieveEmail()).toBe(testEmail);
-})
+});
+
+test("Using a function should retrieve the employee role \"Employee\"", () => {
+    const testRole = "Employee";
+    const x = new Employee("Snow", 1, "test@email.com");
+    expect(x.retrieveRole()).toBe(testRole);
+});
