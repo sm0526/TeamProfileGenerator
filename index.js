@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const inquirer = require('inquirer');
-const render = require('./lib/utils');
+const render = require('./lib/utils/generateHTML');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
@@ -11,10 +11,6 @@ const DIST_DIR = path.resolve(__dirname, 'dist');
 const distPath = path.join(DIST_DIR, 'team.html');
 const idArray = [];
 const teamMembers = [];
-//instructions to reset
-console.log(
-    '\nUse `npm run reset` to reset the dist folder\n'
-);
 //functions
 function appMenu() {
     function constructManager() {
@@ -183,7 +179,7 @@ function appMenu() {
     }
     function addIntern() {
         inquirer
-            .promt([
+            .prompt([
                 {
                     type: 'input',
                     name: 'internName',
@@ -256,5 +252,6 @@ function appMenu() {
         }
         fs.writeFileSync(distPath, render(teamMembers), 'utf-8');
     }
-    constructManager
+    constructManager();
 }
+appMenu();
