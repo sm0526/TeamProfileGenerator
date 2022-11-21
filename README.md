@@ -22,7 +22,7 @@ node index.js
 
 #### Video Walkthrough 
 
-[Video showing how to use the program]()
+[Video showing how to use the program](https://drive.google.com/file/d/1NlZUHhanCTYDdl-ItGAhPXdZcQ7ZO_mS/view)
 
 ## Credits
 
